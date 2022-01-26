@@ -2,21 +2,50 @@
 
 A simple role to install my [https://github.com/JonaVDM/dotfiles](Dotfiles) on a system.
 
+## Requirements
+
+Git needs to be installed on the system.
+
 ## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```yml
+dotfiles_repo: https://github.com/JonaVDM/dotfiles.git
+```
+
+The git repository where the dotfiles are stored. The machine needs to have access to these, either by settings the
+repo to public or authenticating with keys.
+
+```yml
+dotfiles_folder: ~/.dotfiles
+```
+
+The folder where git is going to clone the repo to.
+
+```yml
+dotfiles_files:
+  - src: .zshrc
+    dest: ~/.zshrc
+  - src: .gitconfig
+    dest: ~/.gitconfig
+  - src: .tmux.conf
+    dest: ~/.tmux.conf
+  - src: alacritty
+    dest: ~/.config/alacritty
+```
+
+The files in the repo and where they have to be linked to.
 
 ## Dependencies
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
 ## Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yml
+- hosts: localhost
+  roles:
+    - { role: jonavdm.dotfiles }
+```
 
 ## License
 

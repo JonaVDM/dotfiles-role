@@ -1,2 +1,13 @@
 ---
-# defaults file for dotfiles-role
+dotfiles_repo: https://github.com/JonaVDM/dotfiles.git
+dotfiles_folder: ~/.dotfiles
+
+dotfiles_files:
+  - src: .zshrc
+    dest: ~/.zshrc
+  - src: .gitconfig
+    dest: ~/.gitconfig
+  - src: .tmux.conf
+    dest: ~/.tmux.conf
+  - src: alacritty
+    dest: ~/.config/alacritty
