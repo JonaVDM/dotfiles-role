@@ -1,4 +1,10 @@
 ---
+- name: Make sure the .config folder exists
+  ansible.builtin.file:
+    path: ~/.config
+    state: directory
+    mode: "0755"
+
 - name: Clone dotfiles repo to the machine
   ansible.builtin.git:
     accept_hostkey: true
