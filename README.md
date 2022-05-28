@@ -31,6 +31,10 @@ dotfiles_files:
     dest: ~/.tmux.conf
   - src: alacritty
     dest: ~/.config/alacritty
+  - src: kitty
+    dest: ~/.config/kitty
+  - src: tmuxinator
+    dest: ~/.config/tmuxinator
 ```
 
 The files in the repo and where they have to be linked to.

@@ -11,3 +11,7 @@ dotfiles_files:
     dest: ~/.tmux.conf
   - src: alacritty
     dest: ~/.config/alacritty
+  - src: kitty
+    dest: ~/.config/kitty
+  - src: tmuxinator
+    dest: ~/.config/tmuxinator
